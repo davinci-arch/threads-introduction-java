@@ -2,16 +2,22 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
+    private static Scanner in = new Scanner(System.in);
+    private static int amountOfThreads;
+    private static List<Task> tasks = new ArrayList<>();
     public static void main(String[] args) {
-        List<Task> tasks = new ArrayList<>(List.of(
-                new Task(2),
-                new Task(10),
-                new Task(1),
-                new Task(34)
-        ));
+
+        System.out.print("Write amount of threads: ");
+        amountOfThreads = in.nextInt();
+
+        for (int i = 0; i < amountOfThreads; i++) {
+            System.out.print("Write step for task regression: ");
+            tasks.add(new Task(in.nextInt()));
+        }
 
         TaskScheduler scheduler = new TaskScheduler();
 

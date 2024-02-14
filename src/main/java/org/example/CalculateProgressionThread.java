@@ -17,7 +17,6 @@ public class CalculateProgressionThread extends Thread {
     public void run() {
         while (true) {
             if (taskScheduler.isRunning()) {
-
                 currentTask.calculate();
             } else {
                 break;
